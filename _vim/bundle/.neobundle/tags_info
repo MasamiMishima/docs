@@ -1,10 +1,12 @@
-emmet-vim
 jellybeans.vim
 lightline.vim
 neobundle.vim
 neomru.vim
-nerdtree
 unite.vim
 vim-autoclose
+vim-easymotion
 vim-endwise
+vim-fugitive
+vim-gitgutter
+vimfiler
 vimproc
