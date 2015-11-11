@@ -3,3 +3,4 @@ set number
 set nocompatible
 set autoindent
 set tabstop=2
+set laststatus=2
