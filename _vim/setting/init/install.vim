@@ -25,13 +25,11 @@ NeoBundle 'itchyny/lightline.vim'
 " HTML5 のタグに色をつける
 NeoBundle 'othree/html5.vim'
 
+" vim-gitgutter install & setting
+NeoBundle 'airblade/vim-gitgutter'
+
 " js のシンタックス
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-
-" スニペッド
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 
 call neobundle#end()
 " Required:
