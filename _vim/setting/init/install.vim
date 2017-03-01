@@ -31,6 +31,15 @@ NeoBundle 'airblade/vim-gitgutter'
 " js のシンタックス
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
+" エリクサーの設定 
+NeoBundle 'elixir-lang/vim-elixir'
+
+" goのシンタックス
+NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-jp/vim-go-extra'
+
+NeoBundle 'scrooloose/syntastic'
+
 call neobundle#end()
 " Required:
 filetype plugin indent on
