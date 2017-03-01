@@ -40,9 +40,13 @@ NeoBundle 'vim-jp/vim-go-extra'
 
 NeoBundle 'scrooloose/syntastic'
 
+NeoBundle 'ervandew/supertab'
+
 call neobundle#end()
 " Required:
 filetype plugin indent on
+
+
 
 NeoBundleCheck
 "-------------------------

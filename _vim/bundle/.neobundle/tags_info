@@ -3,6 +3,7 @@ jellybeans.vim
 lightline.vim
 neobundle.vim
 nerdtree
+supertab
 syntastic
 vim-elixir
 vim-gitgutter
