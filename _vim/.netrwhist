@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/mishima/Google ドライブ/Setting'
+let g:netrw_dirhist_2='/Users/mishima/Applications'
+let g:netrw_dirhist_3='/Users/mishima/Applications/iTerm.app'
+let g:netrw_dirhist_4='/Users/mishima/Applications'
+let g:netrw_dirhist_5='/Users/mishima/Applications/iTerm.app'
+let g:netrw_dirhist_6='/Users/mishima/Applications'
