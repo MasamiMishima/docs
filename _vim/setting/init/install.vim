@@ -1,25 +1,40 @@
-if &compatible
+if !&compatible
   set nocompatible
 endif
 
-let s:dein_path = expand('~/.vim/dein')
-let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
+" reset augroup
+augroup MyAutoCmd
+  autocmd!
+augroup END
 
-" deinなかったらcloneでもってくる
-if !isdirectory(s:dein_repo_path)
-  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_path
+" dein settings {{{
+" dein自体の自動インストール
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
+let s:dein_dir = s:cache_home . '/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_repo_dir)
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
-
-execute 'set runtimepath^=' . s:dein_repo_path
-
-" let g:dein#install_progress_type = 'title'
-let g:dein#enable_notification = 1
-
-call dein#begin(s:dein_path)
-call dein#load_toml('/plugins.toml', {'lazy': 0})
-call dein#load_toml('/plugins-lazy.toml', {'lazy': 1})
-call dein#end()
-
-if dein#check_install()
+let &runtimepath = s:dein_repo_dir .",". &runtimepath
+" プラグイン読み込み＆キャッシュ作成
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml_file)
+  call dein#end()
+  call dein#save_state()
+endif
+" 不足プラグインの自動インストール
+if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
+" }}}
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
+syntax enable
+colorscheme tender
+
+let g:indent_guides_enable_on_vim_startup = 1

@@ -7,10 +7,10 @@ source ~/.zplug/init.zsh
 
 # enhancd config
 export ENHANCD_COMMAND=ed
-zplug 'nksoff/muslim', as:theme
+zplug 'bhilburn/powerlevel9k', as:theme
 
 # Load theme file
-zplug "oskarkrawczyk/honukai-iterm-zsh", use:oskarkrawczyk.honukai-iterm-zs
+# zplug "el1t/statusline", use:el1t.statusline
 
 # Tracks your most used directories, based on 'frecency'.
 zplug "rupa/z", use:"*.sh"
@@ -30,12 +30,16 @@ zplug "zsh-users/zsh-completions"
 # This plugin adds many useful aliases and functions.
 zplug "plugins/git",   from:oh-my-zsh
 
+# A modified version of oh-my-zsh's plugin
+zplug "zlsun/solarized-man"
+
 # ZSH port of Fish shell's history search feature
 zplug "zsh-users/zsh-history-substring-search", defer:2
 
 # 256color ZSH Plugin
 zplug "chrissicool/zsh-256color"
 
+zplug "felixr/docker-zsh-completion"
 
 # Grab binaries from GitHub Releases
 # and rename with the "rename-to:" tag
@@ -44,6 +48,9 @@ zplug "junegunn/fzf-bin", \
     as:command, \
     rename-to:fzf, \
     use:"*darwin*amd64*"
+
+# install fzf-tmux
+zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 
 # Syntax highlighting bundle. zsh-syntax-highlighting must be loaded after
 # excuting compinit command and sourcing other plugins.
@@ -130,12 +137,29 @@ alias mkdir='mkdir -p'
 alias sudo='sudo '
 
 # grep でヒットした文字列を強調
-# alias grep="grep --color"
+alias grep="grep --color"
 
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep -v grep | grep --color -i'
 
+alias ssh-log='ssh -f -N -L 8080:182.50.98.167:8022 log'
+
+# マージ済みのブランチを消す
+alias git-del='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % git branch -d %'
+
+# alias ssh='~/dotfiles/bin/ssh-host-color.sh'
+
+
+
+# zhs-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
 export CLICOLOR=true
 export LSCOLORS='exfxcxdxbxGxDxabagacad'
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
