@@ -148,7 +148,7 @@ alias ssh-log='ssh -f -N -L 8080:182.50.98.167:8022 log'
 # マージ済みのブランチを消す
 alias git-del='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % git branch -d %'
 
-# alias ssh='~/dotfiles/bin/ssh-host-color.sh'
+#  alias ssh='~/dotfiles/bin/ssh-host-color.sh'
 
 
 
@@ -157,6 +157,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
+
+eval "$(rbenv init -)"
 
 export CLICOLOR=true
 export LSCOLORS='exfxcxdxbxGxDxabagacad'
