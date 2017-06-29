@@ -17,5 +17,34 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]] # カラースキーマ
 repo = 'jacoborus/tender.vim'
+
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "Xuyuanp/nerdtree-git-plugin"
+
+[[pulgins]]
+repo = "vim-airline/vim-airline"
+hook_add = '''
+" Powerline系フォントを利用する
+let g:airline_powerline_fonts = 1
+
+" タブバーのカスタマイズを有効にする
+let g:airline#extensions#tabline#enabled = 1
+
+" タブバーの右領域を非表示にする
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
+'''
+
+[[pulgins]]
+repo = "bronson/vim-trailing-whitespace"
+

@@ -7,8 +7,8 @@ source ~/.zplug/init.zsh
 
 # enhancd config
 export ENHANCD_COMMAND=ed
-zplug 'bhilburn/powerlevel9k', as:theme
-
+#zplug 'bhilburn/powerlevel9k', as:theme
+zplug "frmendes/geometry", as:theme
 # Load theme file
 # zplug "el1t/statusline", use:el1t.statusline
 

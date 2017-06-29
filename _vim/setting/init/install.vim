@@ -37,8 +37,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
 colorscheme tender
 
-let g:indent_guides_enable_on_vim_startup = 1
-" 奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
-" 偶数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+let g:indentLine_color_term = 111
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '' "use ¦, ┆ or │
