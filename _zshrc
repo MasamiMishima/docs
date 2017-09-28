@@ -144,13 +144,18 @@ alias -g L='| less'
 alias -g G='| grep -v grep | grep --color -i'
 
 alias ssh-log='ssh -f -N -L 8080:182.50.98.167:8022 log'
+alias ssh-log-minaie='ssh -f -N -L 8081:160.16.100.18:8022 log'
+
 
 # マージ済みのブランチを消す
 alias git-del='git branch --merged | grep -vE "^\*|master$|develop$" | xargs -I % git branch -d %'
 
+alias git-del-remot="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
+
 #  alias ssh='~/dotfiles/bin/ssh-host-color.sh'
 
-
+alias vim=nvim
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # zhs-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
